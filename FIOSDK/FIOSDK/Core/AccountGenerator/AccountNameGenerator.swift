@@ -12,7 +12,7 @@ import Foundation
  * This class is responsible for account name API parameter https://developers.fioprotocol.io specs
  * Account name is also called actor or FIO public address
  */
-struct AccountNameGenerator {
+public struct AccountNameGenerator {
     
     /**
      * Generate account name with given public key based on a hash function.

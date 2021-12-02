@@ -50,7 +50,7 @@ enum PrivateKeyError: Error {
     case runtimeError(String)
 }
 
-internal struct PrivateKey {
+public struct PrivateKey {
     
     private let slipFIO: UInt32 = 235
     static let prefix = "PVT"
@@ -58,7 +58,7 @@ internal struct PrivateKey {
     var enclave: SecureEnclave
     var data: Data
     
-    init?(keyString: String) throws {
+    public init?(keyString: String) throws {
         if keyString.range(of: PrivateKey.delimiter) == nil {
             enclave = .Secp256k1
             data = try keyString.parseWif()!

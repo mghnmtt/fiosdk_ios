@@ -106,6 +106,15 @@ public class FIOSDK: BaseFIOSDK {
         return keyManager.privatePublicKeyPair(mnemonic: mnemonic)
     }
     
+    
+    static public func convertPublicKey(privateKeyStr:String) -> String {
+        guard let pv = try! PrivateKey(keyString: privateKeyStr) else {
+            return ""
+        }
+        return PublicKey(privateKey: pv).rawPublicKey()
+        
+    }
+    
     /**
      * This method removes private and public keys from the keychain. It may throw keychain access errors while doing so.
      * - throws: throw keychain access errors
@@ -993,6 +1002,27 @@ public class FIOSDK: BaseFIOSDK {
                 onCompletion(handledData.response, FIOError.success())
         }
     }
+    
+    
+    public func onto_transferTokens(payeePublicKey: String, amount: Int, maxFee: Int, technologyProviderId: String = "", onCompletion: @escaping (_ response: FIOSDK.Responses.TransferFIOTokensResponse?, _ error: FIOError , _ tx: String) -> ()){
+        let actor = AccountNameGenerator.run(withPublicKey: getPublicKey())
+        let transfer = TransferFIOTokensRequest (payeePublicKey: payeePublicKey, amount: amount, maxFee: maxFee, technologyProviderId: self.getTechnologyProviderId(technologyProviderId), actor: actor)
+        signedPostRequestTo(privateKey: getPrivateKey(),
+            route: ChainRoutes.transferTokens,
+            forAction: ChainActions.transferTokens,
+           withBody: transfer,
+           code: "fio.token",
+           account: actor) { (result, error) in
+               guard let result = result else {
+                   onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainActions.transferTokens.rawValue) call failed."),"")
+                   return
+               }
+               let handledData: (response: FIOSDK.Responses.TransferFIOTokensResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+            onCompletion(handledData.response, FIOError.success(), result.transaction_id)
+       }
+   }
+    
+    
     
     //MARK: Get Fees
 

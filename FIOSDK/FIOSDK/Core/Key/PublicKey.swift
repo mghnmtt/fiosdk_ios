@@ -42,14 +42,14 @@ internal extension String {
     
 }
 
-internal struct PublicKey {
+public struct PublicKey {
     
     var data: Data
     var enclave: SecureEnclave
     static let delimiter = "_"
     static let prefix = "PUB"
     
-    init(privateKey: PrivateKey) {
+    public init(privateKey: PrivateKey) {
         var publicBytes: Array<UInt8> = Array(repeating: UInt8(0), count: 64)
         var compressedPublicBytes: Array<UInt8> = Array(repeating: UInt8(0), count: 33)
         
@@ -100,7 +100,7 @@ internal struct PublicKey {
         return self.data.publicKeyEncodeString(enclave: enclave)
     }
     
-    func rawPublicKey() -> String {
+    public func rawPublicKey() -> String {
         let withoutDelimiter = self.wif().components(separatedBy: "_").last
         guard withoutDelimiter!.hasPrefix("FIO") else {
             return "FIO\(withoutDelimiter!)"

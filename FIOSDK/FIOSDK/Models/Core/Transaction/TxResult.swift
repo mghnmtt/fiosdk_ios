@@ -10,6 +10,7 @@ import Foundation
 
 extension FIOSDK.Responses {
     public struct TxResult: Codable {
+        var transaction_id: String
         var processed: TxResultProcessed?
     }
 }
