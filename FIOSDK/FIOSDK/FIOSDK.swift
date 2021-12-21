@@ -686,6 +686,34 @@ public class FIOSDK: BaseFIOSDK {
         }
     }
     
+    // Add by s
+    // Returns the Other blockchain PublicKey, associated with the FIO address.
+    public func getPublicAddresses(fioAddress: String, onCompletion: @escaping (_ publicAddress: FIOSDK.Responses.PublicAddressesResponse?, _ error: FIOError) -> ()){
+        let body = PublicAddressesRequest(fioAddress: fioAddress)
+        let url = ChainRouteBuilder.build(route: ChainRoutes.getPublicAddresses)
+        FIOHTTPHelper.postRequestTo(url, withBody: body) { (data, error) in
+            if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(FIOSDK.Responses.PublicAddressesResponse.self, from: data)
+                    onCompletion(result, FIOError.success())
+                }
+                catch {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "Parsing json failed."))
+                }
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: ChainRoutes.getPublicAddresses.rawValue + " request failed."))
+                }
+            }
+        }
+    }
+    
+    
+    
+    
     /** Returns the FIO PublicKey, associated with the FIO address.
      *
      * - Parameter fioAddress: FIO Address for which to get details to, e.g. "alice@brd"
