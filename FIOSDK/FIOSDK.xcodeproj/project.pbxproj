@@ -204,6 +204,7 @@
 		B3DFFE3F2771B927008EC66B /* PublicAddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DFFE3E2771B927008EC66B /* PublicAddressesResponse.swift */; };
 		B3DFFE432771B9CC008EC66B /* PublicAddressesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DFFE422771B9CC008EC66B /* PublicAddressesRequest.swift */; };
 		B3DFFE4C2771D61E008EC66B /* OtherPublicAddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DFFE4B2771D61E008EC66B /* OtherPublicAddressResponse.swift */; };
+		B3E28A16277333F100673050 /* PublicAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E28A15277333F100673050 /* PublicAddress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,6 +427,7 @@
 		B3DFFE3E2771B927008EC66B /* PublicAddressesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAddressesResponse.swift; sourceTree = "<group>"; };
 		B3DFFE422771B9CC008EC66B /* PublicAddressesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAddressesRequest.swift; sourceTree = "<group>"; };
 		B3DFFE4B2771D61E008EC66B /* OtherPublicAddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPublicAddressResponse.swift; sourceTree = "<group>"; };
+		B3E28A15277333F100673050 /* PublicAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAddress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -911,6 +913,7 @@
 				287F107222565902001E3B32 /* PublicAddressResponse.swift */,
 				287F10742256591C001E3B32 /* PublicAddressRequest.swift */,
 				287F108222566813001E3B32 /* AddPublicAddressRequest.swift */,
+				B3E28A15277333F100673050 /* PublicAddress.swift */,
 				02F62AD62396DADF00B65DC5 /* AddPublicAddressResponse.swift */,
 				287F1084225673CF001E3B32 /* AddPublicAddressOperation.swift */,
 				2856D26E225CC90800BC5D36 /* TokenPublicAddressResponse.swift */,
@@ -1283,6 +1286,7 @@
 				02F62ADB2396DF5400B65DC5 /* SetFIODomainVisibilityResponse.swift in Sources */,
 				02F62AD92396DEA600B65DC5 /* SetFIODomainVisibilityRequest.swift in Sources */,
 				0203C582217A487A0054FA10 /* PackedTransaction.swift in Sources */,
+				B3E28A16277333F100673050 /* PublicAddress.swift in Sources */,
 				B3DFFE4C2771D61E008EC66B /* OtherPublicAddressResponse.swift in Sources */,
 				0203C599217A4EC90054FA10 /* Utilities.swift in Sources */,
 				283438482245439B00E60314 /* bip32.c in Sources */,

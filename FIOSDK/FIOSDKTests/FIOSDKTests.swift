@@ -415,8 +415,6 @@ class FIOSDKTests: XCTestCase {
     }
 
     
-
-    
     func testGetPublicAddressWithNonRegisteredTokenShouldFail(){
         let expectation = XCTestExpectation(description: "testgetpublicaddress")
         self.defaultSDKConfig()
@@ -580,11 +578,9 @@ class FIOSDKTests: XCTestCase {
                                expGetPendingRequest.fulfill()
                                return
                              }
-                             
                              expGetPendingRequest.fulfill()
                          }
                      }
-                     
                  }
                  else {
                      XCTFail("Failed to call requestFunds for getSentRequests")

@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal struct AddPublicAddressRequest: Codable {
+public struct AddPublicAddressRequest: Codable {
     
     let fioAddress: String
     let publicAddresses: [PublicAddress]
@@ -22,17 +22,5 @@ internal struct AddPublicAddressRequest: Codable {
         case maxFee        = "max_fee"
         case technologyProviderId = "tpid"
         case actor
-    }
-}
-
-public struct PublicAddress: Codable {
-    let chainCode: String
-    let tokenCode: String
-    let publicAddress: String
-    
-    enum CodingKeys: String, CodingKey {
-        case chainCode = "chain_code"
-        case tokenCode = "token_code"
-        case publicAddress = "public_address"
     }
 }
