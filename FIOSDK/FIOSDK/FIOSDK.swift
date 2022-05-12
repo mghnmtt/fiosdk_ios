@@ -9,8 +9,8 @@
 import UIKit
 
 /**
-*  Main Singleton class for FIO SDK functionality. [visit API specs](https://developers.fioprotocol.io)
-**/
+ *  Main Singleton class for FIO SDK functionality. [visit API specs](https://developers.fioprotocol.io)
+ **/
 public class FIOSDK: BaseFIOSDK {
     
     //MARK: Namespacing
@@ -159,17 +159,17 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: domain,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.RenewFIOAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "renew_fio_address request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.RenewFIOAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "renew_fio_address request failed."))
+                }
+            }
         }
     }
     
@@ -221,17 +221,17 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: domain,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.RenewFIODomainResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "renew_fio_domain request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.RenewFIODomainResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "renew_fio_domain request failed."))
+                }
+            }
         }
     }
     
@@ -257,17 +257,17 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: domain,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.RegisterFIODomainResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "register_fio_domain request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.RegisterFIODomainResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "register_fio_domain request failed."))
+                }
+            }
         }
     }
     
@@ -296,17 +296,17 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: body,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.SetFIODomainVisibilityResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "setFioDomainVisibility request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.SetFIODomainVisibilityResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "setFioDomainVisibility request failed."))
+                }
+            }
         }
     }
     
@@ -334,36 +334,64 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: body,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.RegisterFIOAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "register_fio_address request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.RegisterFIOAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "register_fio_address request failed."))
+                }
+            }
+        }
+    }
+    
+    public func onto_registerFioAddress(_ fioAddress: String, maxFee: Int, technologyProviderId: String = "", onCompletion: @escaping (_ response: FIOSDK.Responses.RegisterFIOAddressResponse? , _ error:FIOError?, _ tx: String) -> ()) {
+        guard isFioAddressValid(fioAddress) else {
+            onCompletion(nil, FIOError.failure(localizedDescription: "Invalid FIO Address."),"")
+            return
+        }
+        let actor = AccountNameGenerator.run(withPublicKey: getPublicKey())
+        let body = RegisterFIOAddressRequest(fioAddress: fioAddress, fioPublicKey: "", maxFee: maxFee, technologyProviderId: self.getTechnologyProviderId(technologyProviderId), actor: actor)
+        
+        signedPostRequestTo(privateKey: getPrivateKey(),
+                            route: ChainRoutes.registerFIOAddress,
+                            forAction: ChainActions.registerFIOAddress,
+                            withBody: body,
+                            code: "fio.address",
+                            account: actor) { (data, error) in
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.RegisterFIOAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error,result.transaction_id)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error,"")
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "register_fio_address request failed."),"")
+                }
+            }
         }
     }
     
     //MARK: - Add Public Address
     
     /** Adds a public address of the specific token to the FIO Address.
-    *
-    * - Parameter fioAddress: FIO Address to add the public address to.
-    * - Parameter chainCode: Blockchain code for blockchain hosting this token.
-    * - Parameter tokenCode: The token code of a coin, i.e. BTC, EOS, ETH, etc.
-    * - Parameter publicAddress: The public address for the specified token.
-    * - Parameter maxFee: Maximum amount of SUFs the user is willing to pay for fee. Should be preceded by calling the getFee() method for the correct value.
-    * - Parameter technologyProviderId: FIO Address of the wallet which generates this transaction.
-    + Set to empty if not known.
-    + This can be passed into the sharedInstance (Singleton) initializer to be used for all method calls OR overridden here
-    * - Parameter - onCompletion: The completion handler, providing an optional error in case something goes wrong
-    **/
+     *
+     * - Parameter fioAddress: FIO Address to add the public address to.
+     * - Parameter chainCode: Blockchain code for blockchain hosting this token.
+     * - Parameter tokenCode: The token code of a coin, i.e. BTC, EOS, ETH, etc.
+     * - Parameter publicAddress: The public address for the specified token.
+     * - Parameter maxFee: Maximum amount of SUFs the user is willing to pay for fee. Should be preceded by calling the getFee() method for the correct value.
+     * - Parameter technologyProviderId: FIO Address of the wallet which generates this transaction.
+     + Set to empty if not known.
+     + This can be passed into the sharedInstance (Singleton) initializer to be used for all method calls OR overridden here
+     * - Parameter - onCompletion: The completion handler, providing an optional error in case something goes wrong
+     **/
     public func addPublicAddress(fioAddress: String, chainCode: String, tokenCode: String, publicAddress: String, maxFee: Int, technologyProviderId:String = "", onCompletion: @escaping (_ response: FIOSDK.Responses.AddPublicAddressResponse? , _ error:FIOError?) -> ()) {
-   
+        
         // validation
         guard chainCode.lowercased() != "fio" else {
             onCompletion(nil, FIOError(kind: .Failure, localizedDescription: "The FIO TokenCode should not be added using this method.  It is associated with the FIO Public Address at fio address registration."))
@@ -390,30 +418,30 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: data,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.AddPublicAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "addpublicaddress request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.AddPublicAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "addpublicaddress request failed."))
+                }
+            }
         }
     }
     
     /** Adds public addressess for specific tokens to the FIO Address.
-    *
-    * - Parameter fioAddress: A string name tag in the format of fioaddress.brd.
-    * - Parameter publicAddresses: An array of PublicAddress (tokenCode and token's public address) for that FIO Address
-    * - Parameter maxFee: Maximum amount of SUFs the user is willing to pay for fee. Should be preceded by calling the getFee() method for the correct value.
-    * - Parameter technologyProviderId: FIO Address of the wallet which generates this transaction.
-    + Set to empty if not known.
-    + This can be passed into the sharedInstance (Singleton) initializer to be used for all method calls OR overridden here
-    * - Parameter - onCompletion: The completion handler, providing an optional error in case something goes wrong
-    **/
+     *
+     * - Parameter fioAddress: A string name tag in the format of fioaddress.brd.
+     * - Parameter publicAddresses: An array of PublicAddress (tokenCode and token's public address) for that FIO Address
+     * - Parameter maxFee: Maximum amount of SUFs the user is willing to pay for fee. Should be preceded by calling the getFee() method for the correct value.
+     * - Parameter technologyProviderId: FIO Address of the wallet which generates this transaction.
+     + Set to empty if not known.
+     + This can be passed into the sharedInstance (Singleton) initializer to be used for all method calls OR overridden here
+     * - Parameter - onCompletion: The completion handler, providing an optional error in case something goes wrong
+     **/
     public func addPublicAddresses(fioAddress: String, publicAddresses:[PublicAddress], maxFee: Int, technologyProviderId:String = "", onCompletion: @escaping (_ response: FIOSDK.Responses.AddPublicAddressResponse? , _ error:FIOError?) -> ()) {
         let actor = AccountNameGenerator.run(withPublicKey: getPublicKey())
         let data = AddPublicAddressRequest(fioAddress: fioAddress, publicAddresses: publicAddresses, actor: actor, maxFee: maxFee, technologyProviderId: self.getTechnologyProviderId(technologyProviderId))
@@ -423,17 +451,17 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: data,
                             code: "fio.address",
                             account: actor) { (data, error) in
-                                if let result = data {
-                                    let handledData: (response: FIOSDK.Responses.AddPublicAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, handledData.error)
-                                } else {
-                                    if let error = error {
-                                        onCompletion(nil, error)
-                                    }
-                                    else {
-                                        onCompletion(nil, FIOError.failure(localizedDescription: "addpublicaddress request failed."))
-                                    }
-                                }
+            if let result = data {
+                let handledData: (response: FIOSDK.Responses.AddPublicAddressResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, handledData.error)
+            } else {
+                if let error = error {
+                    onCompletion(nil, error)
+                }
+                else {
+                    onCompletion(nil, FIOError.failure(localizedDescription: "addpublicaddress request failed."))
+                }
+            }
         }
     }
     
@@ -453,17 +481,17 @@ public class FIOSDK: BaseFIOSDK {
         let request = AvailCheckRequest(fio_name: fioName)
         let url = ChainRouteBuilder.build(route: ChainRoutes.availCheck)
         FIOHTTPHelper.postRequestTo(url,
-            withBody: request) { (data, error) in
-                guard let data = data, error != nil else {
-                    onCompletion(false, error ?? FIOError.failure(localizedDescription: "isAvailable failed."))
-                    return
-                }
-                do {
-                    let response = try JSONDecoder().decode(AvailCheckResponse.self, from: data)
-                    onCompletion(!response.isRegistered, FIOError.success())
-                }catch let error {
-                    onCompletion(false, FIOError.failure(localizedDescription: error.localizedDescription))
-                }
+                                    withBody: request) { (data, error) in
+            guard let data = data, error != nil else {
+                onCompletion(false, error ?? FIOError.failure(localizedDescription: "isAvailable failed."))
+                return
+            }
+            do {
+                let response = try JSONDecoder().decode(AvailCheckResponse.self, from: data)
+                onCompletion(!response.isRegistered, FIOError.success())
+            }catch let error {
+                onCompletion(false, FIOError.failure(localizedDescription: error.localizedDescription))
+            }
         }
     }
     
@@ -514,9 +542,9 @@ public class FIOSDK: BaseFIOSDK {
     public func getObtDataByTokenCode(tokenCode:String, limit:Int?=nil, offset:Int?=0, onCompletion: @escaping (_ obtDataResponse: FIOSDK.Responses.GetObtDataResponse?, _ error:FIOError) -> ()) {
         
         self.getObtData(limit:limit, offset:offset , onCompletion: { (response, error) in
-        
+            
             if (error.kind == FIOError.ErrorKind.Success) {
-
+                
                 if (response != nil){
                     var result = response
                     result?.obtData = response!.obtData.filter { ($0.content.tokenCode.lowercased() == tokenCode.lowercased()) }
@@ -563,7 +591,7 @@ public class FIOSDK: BaseFIOSDK {
             }
         }
     }
-
+    
     //MARK: Get FIO Names
     
     /** Returns FIO Addresses and FIO Domains owned by given FIO public key.
@@ -731,12 +759,12 @@ public class FIOSDK: BaseFIOSDK {
         }
         
         let sharedSecret = privateKey.getSharedSecret(publicKey: publicKey)
-               
+        
         let serializer = abiSerializer()
         let packed = try? serializer.serializeContent(contentType: contentType, json: contentJson)
-
+        
         guard let encrypted = Cryptography().encrypt(secret: sharedSecret ?? "", message: packed ?? "", iv: nil) else {
-           return ""
+            return ""
         }
         
         return  encrypted.base64EncodedString()
@@ -744,13 +772,13 @@ public class FIOSDK: BaseFIOSDK {
     
     internal func decrypt(publicKey: String, contentType: FIOAbiContentType, encryptedContent: String) -> String{
         guard let myKey = try! PrivateKey(keyString: self.privateKey) else {
-           return ""
+            return ""
         }
         
         if let decodedContentData = Data(base64Encoded: encryptedContent) {
             
             let sharedSecret = myKey.getSharedSecret(publicKey: publicKey)
-
+            
             var possibleDecrypted: Data?
             do {
                 possibleDecrypted = try Cryptography().decrypt(secret: sharedSecret!, message: decodedContentData)
@@ -761,12 +789,12 @@ public class FIOSDK: BaseFIOSDK {
             guard let decrypted = possibleDecrypted  else {
                 return ""
             }
-
+            
             let serializer = abiSerializer()
             let contentJSON = try? serializer.deserializeContent(contentType: contentType, hexString: decrypted.hexEncodedString().uppercased())
-
+            
             return contentJSON ?? ""
-
+            
         } else {
             return ""
         }
@@ -791,9 +819,9 @@ public class FIOSDK: BaseFIOSDK {
      * - Parameter - onCompletion: The completion handler, providing an optional error in case something goes wrong
      **/
     public func requestFunds(payer payerFIOAddress:String, payee payeeFIOAddress: String, payeePublicAddress: String, amount: Float, chainCode: String, tokenCode: String, metadata: RequestFundsRequest.MetaData, maxFee: Int, technologyProviderId:String = "", onCompletion: @escaping ( _ response: RequestFundsResponse?, _ error:FIOError? ) -> ()) {
-       
+        
         self.getFioPublicAddress(fioAddress: payerFIOAddress) { (response, error) in
-
+            
             if (error.kind == FIOError.ErrorKind.Success) {
                 
                 let contentJson = RequestFundsContent(payeePublicAddress: payeePublicAddress, amount: String(amount), chainCode: chainCode, tokenCode: tokenCode, memo:metadata.memo ?? "", hash: metadata.hash ?? "", offlineUrl: metadata.offlineUrl ?? "")
@@ -804,24 +832,24 @@ public class FIOSDK: BaseFIOSDK {
                 let data = RequestFundsRequest(payerFIOAddress: payerFIOAddress, payeeFIOAddress: payeeFIOAddress, content:encryptedContent, maxFee: maxFee, technologyProviderId: self.getTechnologyProviderId(technologyProviderId), actor: actor)
                 
                 signedPostRequestTo(privateKey: self.getPrivateKey(),
-                                   route: ChainRoutes.newFundsRequest,
-                                   forAction: ChainActions.newFundsRequest,
-                                   withBody: data,
-                                   code: "fio.reqobt",
-                                   account: actor) { (result, error) in
-                                       guard let result = result else {
-                                           onCompletion(nil, error)
-                                           return
-                                       }
-                                       let handledData: (response: RequestFundsResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                       onCompletion(handledData.response, handledData.error)
-                       }
+                                    route: ChainRoutes.newFundsRequest,
+                                    forAction: ChainActions.newFundsRequest,
+                                    withBody: data,
+                                    code: "fio.reqobt",
+                                    account: actor) { (result, error) in
+                    guard let result = result else {
+                        onCompletion(nil, error)
+                        return
+                    }
+                    let handledData: (response: RequestFundsResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                    onCompletion(handledData.response, handledData.error)
+                }
             }
             else {
                 onCompletion(nil, FIOError.init(kind: .Failure, localizedDescription: "Payer FIO Public Address not found"))
             }
         }
-
+        
     }
     
     //MARK: - Reject Funds
@@ -845,16 +873,16 @@ public class FIOSDK: BaseFIOSDK {
                             withBody: data,
                             code: "fio.reqobt",
                             account: actor) { (result, error) in
-                                guard let result = result else {
-                                    onCompletion(nil, error ?? FIOError.init(kind: .Failure, localizedDescription: "The request couldn't rejected"))
-                                    return
-                                }
-                                let handledData: (response: FIOSDK.Responses.RejectFundsRequestResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                guard handledData.response?.status == .rejected else {
-                                    onCompletion(nil, FIOError.failure(localizedDescription: "The request couldn't rejected"))
-                                    return
-                                }
-                                onCompletion(handledData.response, FIOError.success())
+            guard let result = result else {
+                onCompletion(nil, error ?? FIOError.init(kind: .Failure, localizedDescription: "The request couldn't rejected"))
+                return
+            }
+            let handledData: (response: FIOSDK.Responses.RejectFundsRequestResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+            guard handledData.response?.status == .rejected else {
+                onCompletion(nil, FIOError.failure(localizedDescription: "The request couldn't rejected"))
+                return
+            }
+            onCompletion(handledData.response, FIOError.success())
         }
     }
     
@@ -894,7 +922,7 @@ public class FIOSDK: BaseFIOSDK {
     }
     
     //MARK: Record ObtData
-
+    
     /** Record a transaction on another blockhain (OBT: other block chain transaction).
      *
      * - Parameter fioRequestId: The fio request Id to record data against.  Set to nil if there is no associated fio request
@@ -914,18 +942,18 @@ public class FIOSDK: BaseFIOSDK {
      * - Parameter - onCompletion: The completion handler, providing an optional error in case something goes wrong
      **/
     public func recordObtData(fioRequestId: Int? = nil,
-                           payerFIOAddress: String,
-                           payeeFIOAddress: String,
-                           payerTokenPublicAddress: String,
-                           payeeTokenPublicAddress: String,
-                           amount: Double,
-                           chainCode: String,
-                           tokenCode: String,
-                           obtId: String,
-                           maxFee: Int,
-                           metaData: RecordObtDataRequest.MetaData,
-                           technologyProviderId: String = "",
-                           onCompletion: @escaping (_ response: FIOSDK.Responses.RecordObtDataResponse?, _ error: FIOError?) -> ()){
+                              payerFIOAddress: String,
+                              payeeFIOAddress: String,
+                              payerTokenPublicAddress: String,
+                              payeeTokenPublicAddress: String,
+                              amount: Double,
+                              chainCode: String,
+                              tokenCode: String,
+                              obtId: String,
+                              maxFee: Int,
+                              metaData: RecordObtDataRequest.MetaData,
+                              technologyProviderId: String = "",
+                              onCompletion: @escaping (_ response: FIOSDK.Responses.RecordObtDataResponse?, _ error: FIOError?) -> ()){
         
         let contentJson = RecordObtDataContent(payerPublicAddress: payerTokenPublicAddress, payeePublicAddress: payeeTokenPublicAddress, amount: String(amount), chainCode: chainCode, tokenCode: tokenCode, status:"sent_to_blockchain", obtId: obtId, memo: metaData.memo ?? "", hash: metaData.hash ?? "", offlineUrl: metaData.offlineUrl ?? "")
         
@@ -934,7 +962,7 @@ public class FIOSDK: BaseFIOSDK {
                 onCompletion(nil, error)
                 return
             }
-        
+            
             let encryptedContent = self.encrypt(publicKey: payeeFIOPublicKey, contentType: FIOAbiContentType.recordObtDataContent, contentJson: contentJson.toJSONString())
             
             let actor = AccountNameGenerator.run(withPublicKey: self.getPublicKey())
@@ -951,12 +979,12 @@ public class FIOSDK: BaseFIOSDK {
                                 withBody: request,
                                 code: "fio.reqobt",
                                 account: actor) { (result, error) in
-                                    guard let result = result else {
-                                        onCompletion(nil, error ?? FIOError.failure(localizedDescription: "recordObtData send failed"))
-                                        return
-                                    }
-                                    let handledData: (response: FIOSDK.Responses.RecordObtDataResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                                    onCompletion(handledData.response, FIOError.success())
+                guard let result = result else {
+                    onCompletion(nil, error ?? FIOError.failure(localizedDescription: "recordObtData send failed"))
+                    return
+                }
+                let handledData: (response: FIOSDK.Responses.RecordObtDataResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                onCompletion(handledData.response, FIOError.success())
             }
         }
     }
@@ -1017,17 +1045,17 @@ public class FIOSDK: BaseFIOSDK {
         let actor = AccountNameGenerator.run(withPublicKey: getPublicKey())
         let transfer = TransferFIOTokensRequest (payeePublicKey: payeePublicKey, amount: amount, maxFee: maxFee, technologyProviderId: self.getTechnologyProviderId(technologyProviderId), actor: actor)
         signedPostRequestTo(privateKey: getPrivateKey(),
-            route: ChainRoutes.transferTokens,
-            forAction: ChainActions.transferTokens,
-            withBody: transfer,
-            code: "fio.token",
-            account: actor) { (result, error) in
-                guard let result = result else {
-                    onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainActions.transferTokens.rawValue) call failed."))
-                    return
-                }
-                let handledData: (response: FIOSDK.Responses.TransferFIOTokensResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
-                onCompletion(handledData.response, FIOError.success())
+                            route: ChainRoutes.transferTokens,
+                            forAction: ChainActions.transferTokens,
+                            withBody: transfer,
+                            code: "fio.token",
+                            account: actor) { (result, error) in
+            guard let result = result else {
+                onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainActions.transferTokens.rawValue) call failed."))
+                return
+            }
+            let handledData: (response: FIOSDK.Responses.TransferFIOTokensResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+            onCompletion(handledData.response, FIOError.success())
         }
     }
     
@@ -1036,24 +1064,24 @@ public class FIOSDK: BaseFIOSDK {
         let actor = AccountNameGenerator.run(withPublicKey: getPublicKey())
         let transfer = TransferFIOTokensRequest (payeePublicKey: payeePublicKey, amount: amount, maxFee: maxFee, technologyProviderId: self.getTechnologyProviderId(technologyProviderId), actor: actor)
         signedPostRequestTo(privateKey: getPrivateKey(),
-            route: ChainRoutes.transferTokens,
-            forAction: ChainActions.transferTokens,
-           withBody: transfer,
-           code: "fio.token",
-           account: actor) { (result, error) in
-               guard let result = result else {
-                   onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainActions.transferTokens.rawValue) call failed."),"")
-                   return
-               }
-               let handledData: (response: FIOSDK.Responses.TransferFIOTokensResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
+                            route: ChainRoutes.transferTokens,
+                            forAction: ChainActions.transferTokens,
+                            withBody: transfer,
+                            code: "fio.token",
+                            account: actor) { (result, error) in
+            guard let result = result else {
+                onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainActions.transferTokens.rawValue) call failed."),"")
+                return
+            }
+            let handledData: (response: FIOSDK.Responses.TransferFIOTokensResponse?, error: FIOError) = parseResponseFromTransactionResult(txResult: result)
             onCompletion(handledData.response, FIOError.success(), result.transaction_id)
-       }
-   }
+        }
+    }
     
     
     
     //MARK: Get Fees
-
+    
     /** Returns Fee for the selected API endpoint
      *
      * - Parameter endPoint: Name of API call end point, e.g. registerFIODomain
@@ -1144,17 +1172,17 @@ public class FIOSDK: BaseFIOSDK {
         let actor = AccountNameGenerator.run(withPublicKey: getPublicKey())
         
         signedPostRequestTo(privateKey: getPrivateKey(),
-            route: ChainRoutes.pushTransaction,
-            forAction: contractName,
-            withBody: jsonData,
-            code: accountName,
-            account: actor) { (result, error) in
-                guard let result = result else {
-                    onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainRoutes.pushTransaction.rawValue) call failed."))
-                    return
-                }
-
-                onCompletion(result, FIOError.success())
+                            route: ChainRoutes.pushTransaction,
+                            forAction: contractName,
+                            withBody: jsonData,
+                            code: accountName,
+                            account: actor) { (result, error) in
+            guard let result = result else {
+                onCompletion(nil, error ?? FIOError.failure(localizedDescription: "\(ChainRoutes.pushTransaction.rawValue) call failed."))
+                return
+            }
+            
+            onCompletion(result, FIOError.success())
         }
     }
     
@@ -1171,7 +1199,7 @@ public class FIOSDK: BaseFIOSDK {
         pushTransaction(accountName: accountName, contractName: contractName, jsonData: jsonString) { (response, error) in
             onCompletion(response, error)
         }
-
+        
     }
 }
 
